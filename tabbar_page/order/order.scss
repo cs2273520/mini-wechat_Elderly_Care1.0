@@ -1,0 +1,68 @@
+.main{
+    .custom-tabs {
+        margin-bottom: 32rpx;
+        background-color: #F8F8F8;
+        height: 100vh;
+        
+      }
+      .t-tabs__item--active{
+        color: #005826;
+      }
+      .t-tabs__track{
+          background-color: #005826;
+      }
+    .order{
+        display: flex;
+        flex-direction: column;
+        .order_item{
+            box-sizing: border-box;
+            margin-top: 18.116rpx;
+            width: 706.522rpx;
+            height: 248.188rpx;
+            background-color: white;
+            border-radius: 18.116rpx;
+            padding: 27.174rpx 18.116rpx;
+            .item_top{
+                display: flex;
+                justify-content: space-between;
+                .item_top_left{
+                    font-size: 43.478rpx;
+                    margin-left: 36.232rpx;
+                }
+                .item_top_right{
+                    display: flex;
+                    align-items: center;
+                    font-size: 32.609rpx;
+                }
+            }
+            .item_content{
+                display: flex;
+                justify-content: space-between;
+                height: 90.58rpx;
+                margin-top: 36.232rpx;
+                .item_content_left{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .item_content_left_1{
+                        display: flex;
+                        align-items: center;
+                        font-size: 25.362rpx;
+                        view{
+                            margin-left: 18.116rpx;
+                        }
+                    }
+                }
+                .item_content_right{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 18.116rpx 36.232rpx;
+                    border: 1.812rpx solid #ccc;
+                    border-radius: 18.116rpx;
+                    font-size: 32.609rpx;
+                }
+            }
+        }
+    }    
+}

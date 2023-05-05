@@ -1,0 +1,56 @@
+<view class="mian">
+    <view class="top">
+        <view class="top-1">
+            <view class="input-all">
+                <view class="input-left">
+                    <view class="location">广州
+                    </view>
+                    <image src="../../image/index/location.png" mode=""/>
+                    <view class="line">
+
+                    </view>
+                    <input class="search" type="text" placeholder="搜索服务" />
+                </view>
+                <view class="input-right">
+                    取消
+                </view>
+            </view>
+            <view class="top-1-right">
+                <image src="/image/index/scan.png" />
+                <image src="/image/index/msg.png" />
+            </view>
+        </view>
+        <view class="top-2">
+            <view>
+                服务1
+            </view>
+            <view>
+                服务2
+            </view>
+            <view>
+                服务3
+            </view>
+        </view>
+    </view>
+    <view class="content">
+        <view class="swiper">
+            <swiper indicator-dots="{{indicatorDots}}" autoplay  interval="{{interval}}" duration="{{duration}}" class="swiper_content">
+                <block wx:for="{{background}}" wx:key="index">
+                    <swiper-item>
+                        <view class="swiper-item">{{item}}</view>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+
+
+        <view class="toOrder" bindtap="toOrder">
+            <view class="toOrder_center">
+                <image src="/image/tabbar/index_s.png" mode="" />
+                <view>
+                    去下单
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,106 @@
+<view class="main">
+    <t-popup visible="{{visible}}" bind:visible-change="onVisibleChange" placement="bottom">
+  <view class="block">
+    <view class="header">
+      <view class="btn btn--cancel" aria-role="button"></view>
+      <view class="title">售后类型</view>
+      <view class="btn btn--confirm" aria-role="button"></view>
+    </view>
+    <view class="content">
+        <view class="content_1">
+            <view bindtap="toOnlineService">
+                联系客服
+            </view>
+            <view>
+                致电客户
+            </view>
+        </view>
+        <view class="content_2">
+           <view bindtap="toApply">
+            申请售后 >
+           </view> 
+        </view>
+    </view>
+  </view>
+</t-popup>
+    <view class="intro_card">
+        <view class="image">
+            照片
+        </view>
+        <view class="intro_card_right">
+            <view class="t1">
+                <view class="name">
+                    杨阿姨
+                </view>
+                <view class="total">
+                    ⭐5.0
+                </view>
+            </view>
+            <view class="t2">
+                个人简介 xxxxxxxxxxxxxxxxxxx
+            </view>
+            <view class="t3">
+                他人评价 xxxxxxxxxxxxxxxxxxx
+            </view>
+        </view>
+        <view class="afterSale">
+            <view bind:tap="handlePopup">
+                售后
+            </view>
+        </view>
+    </view>
+    <view class="order_detail">
+        <view class="oeder_id">
+            订单id:11111111111111111111
+        </view>
+        <view class="createtime">
+            订单创建时间:2022-12-12一12：00
+        </view>
+        <view class="ordertime">
+            服务下单时间:2022-12-12一12：00
+        </view>
+        <view class="ordercompletetime">
+            服务完成时间:2022-12-12一12：00
+        </view>
+        <view class="servicemode">
+            服务模式:极速模式
+        </view>
+        <view class="servicecontent">
+            服务内容:服务1 | 服务2 | 服务3 |
+        </view>
+        <view class="location">
+            服务地点:广州
+        </view>
+        <view class="servicetime">
+            服务时间:2小时
+        </view>
+        <view class="cost">
+            金额:288元
+        </view>
+    </view>
+    <view class="score" wx:if="{{!isevaluated}}">
+        <view class="score_1">
+            <view class="demo-rate">
+                <view class="demo-rate__title">服务态度</view>
+                <t-rate value="{{value[2]}}" variant="filled" data-index="{{2}}" bind:change="onChange" showText="{{true}}" />
+            </view>
+        </view>
+        <view class="score_1">
+            <view class="demo-rate">
+                <view class="demo-rate__title">服务效果</view>
+                <t-rate value="{{value[2]}}" variant="filled" data-index="{{2}}" bind:change="onChange" showText="{{true}}" />
+            </view>
+        </view>
+    </view>
+    <view class="score_total" wx:if="{{isevaluated}}">
+        您的评分:3分
+        <view class="score_1">
+            <view class="demo-rate">
+                <t-rate value="{{3}}" variant="filled" data-index="{{2}}" bind:change="onChange" showText="{{true}}" />
+            </view>
+        </view>
+    </view>
+    <view class="evaluation" wx:if="{{!isevaluated}}">
+        <button bindtap="toEvaluated">提交评价</button>
+    </view>
+</view>

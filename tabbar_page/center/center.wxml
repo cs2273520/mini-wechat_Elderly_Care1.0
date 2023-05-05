@@ -1,0 +1,54 @@
+<view class="main">
+    <view class="top">
+        <view class="top_info">
+            <image src="/image/center/center_s.png" mode=""/>
+            <view class="top_info_center">
+                <view class="userName">
+                    用户名
+                </view>
+                <view class="editor" bindtap="editor">
+                    点击编辑个人信息
+                </view>
+            </view>
+            <view class="audit">
+                <view>
+                    审核
+                </view>
+                <t-icon name="check" size="12" data-name="check" bind:click="onIconTap"/>
+            </view>
+        </view>
+        <view class="option">
+        <view class="option_center">
+            <view class="CardCoupon">
+            <view class="num">
+                0
+            </view>
+            <view class="description">
+                卡券
+            </view>
+              
+            </view>
+            <view class="CardCoupon">
+            <view class="num">
+                0
+            </view>
+            <view class="description">
+                收藏
+            </view>
+              
+            </view>
+             
+            <view class="CardCoupon">
+            <view class="num">
+                0
+            </view>
+            <view class="description">
+                浏览记录
+            </view>   
+            </view>
+        </view>
+           
+           
+        </view>
+    </view>
+</view>

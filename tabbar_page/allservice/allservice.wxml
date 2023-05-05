@@ -1,0 +1,58 @@
+<view class="main">
+    <view class="top {{isToSearch?'top_active':''}}">
+        <view class="search {{isToSearch?'search_active':''}}" bindtap="toSearch">
+           <image src="/image/tabbar/search.svg" mode=""/>
+            <view wx:if="{{!isToSearch}}">
+                日常保洁
+            </view>
+            <input type="text"  wx:if="{{isToSearch}}" placeholder="日常保洁" model:value="{{search}}" bindinput="search"/>
+        </view>
+        <view wx:if="{{isToSearch && search==''}}" class="cancel" bindtap="cancelSearch">
+            取消
+        </view>
+        <view wx:if="{{isToSearch && search!=''}}" class="cancel" bindtap="confirmSearch">
+            确定
+        </view>
+    </view>
+    <view class="content_main" wx:if="{{isToSearch}}">
+        <view class="content_title">
+            大家都在搜
+        </view>
+        <view class="content_center">
+        <block wx:for="{{searchsearch}}" wx:key="index">
+            <view class="content_center_item">
+            {{item}}
+        </view>
+        </block>
+            
+        </view>
+    </view>
+    <view class="content_main" wx:if="{{!isToSearch}}">
+        <view class="side-bar-wrapper">
+            <t-side-bar value="{{sideBarIndex}}" bind:change="onSideBarChange">
+                <t-side-bar-item wx:for="{{categories}}" wx:key="index" value="{{item.value || index}}" label="{{item.label}}" badge-props="{{item.badgeProps}}" />
+            </t-side-bar>
+            <scroll-view class="content" scroll-y scroll-with-animation scroll-top="{{scrollTop}}" bind:scroll="onScroll">
+                <view class="swiper">
+                    <swiper indicator-dots="{{indicatorDots}}" autoplay interval="{{interval}}" duration="{{duration}}" class="swiper_content">
+                        <block wx:for="{{background}}" wx:key="index">
+                            <swiper-item>
+                                <view class="swiper-item">{{item}}</view>
+                            </swiper-item>
+                        </block>
+                    </swiper>
+                </view>
+                <view wx:for="{{categories}}" wx:key="index" class="section">
+                    <view class="title">{{item.title || item.label}}</view>
+                    <t-grid column="{{3}}" border="{{false}}">
+                        <block wx:for="{{item.items}}" wx:key="index" wx:for-item="cargo">
+                            <t-grid-item text="{{cargo.label}}" image="{{cargo.image}}" image-props="{{ { shape: 'round', lazy: true } }}">
+                            </t-grid-item>
+                        </block>
+                    </t-grid>
+                </view>
+            </scroll-view>
+        </view>
+
+    </view>
+</view>

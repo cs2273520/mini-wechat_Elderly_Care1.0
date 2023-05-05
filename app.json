@@ -1,0 +1,79 @@
+{
+    "pages": [
+        
+        "tabbar_page/index/index",
+        "pages/PlaceAnOrder/PlaceAnOrder_1/PlaceAnOrder_1",
+        "pages/afterSale/afterSaleProgress/afterSaleProgress",
+        "tabbar_page/order/order",
+        "pages/afterSale/applyService/applyService",
+        "pages/afterSale/onlineService/onlineService",
+        "pages/orderDetail/orderDetail",
+        "tabbar_page/allservice/allservice",
+        "tabbar_page/center/center",
+        "pages/InforEditing/InforEditing",
+        "pages/login/login-phone/loginPhone",
+        "pages/login/login",
+        "pages/register/register",
+        "pages/funTest/funTest",
+        "pages/PlaceAnOrder/PlaceAnOrder_2/PlaceAnOrder_2"
+        
+    ],
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
+    },
+    "requiredPrivateInfos": [
+        "getLocation",
+        "startLocationUpdate",
+        "onLocationChange",
+        "startLocationUpdateBackground"
+    ],
+    "requiredBackgroundModes": [
+        "location",
+        "startLocationUpdate",
+        "onLocationChange",
+        "startLocationUpdateBackground"
+    ],
+    "tabBar": {
+        "custom": true,
+        "color": "#7A7E83",
+        "selectedColor": "#3cc51f",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "tabbar_page/index/index",
+                "iconPath": "/image/tabbar/index.png",
+                "selectedIconPath": "/image/tabbar/index_s.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "tabbar_page/allservice/allservice",
+                "iconPath": "/image/tabbar/server.png",
+                "selectedIconPath": "/image/tabbar/server_s.png",
+                "text": "全部服务"
+            },
+            {
+                "pagePath": "tabbar_page/order/order",
+                "iconPath": "/image/tabbar/order.png",
+                "selectedIconPath": "/image/tabbar/order_s.png",
+                "text": "订单管理"
+            },
+            {
+                "pagePath": "tabbar_page/center/center",
+                "iconPath": "/image/tabbar/center.png",
+                "selectedIconPath": "/image/tabbar/center_s.png",
+                "text": "个人"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#005826",
+        "navigationBarTitleText": "智慧养老小程序",
+        "navigationBarTextStyle": "white"
+    },
+    "usingComponents": {},
+    "lazyCodeLoading": "requiredComponents"
+}

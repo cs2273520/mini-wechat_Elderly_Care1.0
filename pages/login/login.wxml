@@ -1,0 +1,20 @@
+<view class="content">
+<view>
+    背景广告图
+</view>
+    <view class="dialog">
+        <view class="agree">
+            点击即代表同意智慧养老 <text>《法律声明及协议》</text>
+        </view>
+        <view class="wechatLogin">
+        <image src="/image/login/wechat.png" mode=""/>
+          <button plain="true"  open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+            微信用户一键登录
+          </button>
+          
+        </view>
+        <view class="phoneLogin" bindtap="toPhone">
+            手机号登录
+        </view>
+    </view>
+</view>

@@ -1,0 +1,149 @@
+<view class="main">
+    <t-tabs defaultValue="{{0}}" bind:change="onTabsChange" bind:click="onTabsClick" t-class="custom-tabs">
+        <t-tab-panel label="待服务" value="0" style="{{tabPanelstyle}}">
+            <view class="order">
+                <view class="order_item" >
+                    <view class="item_top">
+                        <view class="item_top_left">
+                            极速模式
+                        </view>
+                        <view class="item_top_right" bindtap="toDetail">
+                            详情
+                            <t-icon name="chevron-right" size="24" data-name="chevron-right" bind:click="onIconTap" />
+                        </view>
+                    </view>
+                    <view class="item_content">
+                        <view class="item_content_left">
+                            <view class="item_content_left_1">
+                                <t-icon name="star" size="24" data-name="star" bind:click="onIconTap" />
+                                <view>
+                                    2022-12-12一12:00
+                                </view>
+                            </view>
+                            <view class="item_content_left_1">
+                                <t-icon name="star" size="24" data-name="star" bind:click="onIconTap" />
+                                <view>
+                                    广州
+                                </view>
+                            </view>
+
+                        </view>
+                        <view class="item_content_right">
+                            <view class="orderAgain">
+                                验证码
+                            </view>
+                        </view>
+
+
+                    </view>
+                </view>
+                <view class="order_item">
+                    <view class="item_top">
+                        <view class="item_top_left">
+                            包月模式
+                        </view>
+                        <view class="item_top_right">
+                            详情
+                            <t-icon name="chevron-right" size="24" data-name="chevron-right" bind:click="onIconTap" />
+                        </view>
+                    </view>
+                    <view class="item_content">
+                        <view class="item_content_left">
+                            <view class="item_content_left_1">
+                                <t-icon name="star" size="24" data-name="star" bind:click="onIconTap" />
+                                <view>
+                                    2022-12-12一12:00
+                                </view>
+                            </view>
+                            <view class="item_content_left_1">
+                                <t-icon name="star" size="24" data-name="star" bind:click="onIconTap" />
+                                <view>
+                                    广州
+                                </view>
+                            </view>
+
+                        </view>
+                        <view class="item_content_right">
+                            <view class="orderAgain">
+                                验证码
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </t-tab-panel>
+        <t-tab-panel label="待支付" value="1" style="{{tabPanelstyle}}">待支付</t-tab-panel>
+        <t-tab-panel label="已完成" value="2" style="{{tabPanelstyle}}"> <view class="order">
+                <view class="order_item">
+                    <view class="item_top">
+                        <view class="item_top_left">
+                            极速模式
+                        </view>
+                        <view class="item_top_right">
+                            详情
+                            <t-icon name="chevron-right" size="24" data-name="chevron-right" bind:click="onIconTap" />
+                        </view>
+                    </view>
+                    <view class="item_content">
+                        <view class="item_content_left">
+                            <view class="item_content_left_1">
+                                <t-icon name="star" size="24" data-name="star" bind:click="onIconTap" />
+                                <view>
+                                    2022-12-12一12:00
+                                </view>
+                            </view>
+                            <view class="item_content_left_1">
+                                <t-icon name="star" size="24" data-name="star" bind:click="onIconTap" />
+                                <view>
+                                    广州
+                                </view>
+                            </view>
+
+                        </view>
+                        <view class="item_content_right">
+                            <view class="orderAgain" bindtap="orderAgain">
+                                再下单
+                            </view>
+                        </view>
+
+
+                    </view>
+                </view>
+                <view class="order_item">
+                    <view class="item_top">
+                        <view class="item_top_left">
+                            包月模式
+                        </view>
+                        <view class="item_top_right">
+                            详情
+                            <t-icon name="chevron-right" size="24" data-name="chevron-right" bind:click="onIconTap" />
+                        </view>
+                    </view>
+                    <view class="item_content">
+                        <view class="item_content_left">
+                            <view class="item_content_left_1">
+                                <t-icon name="star" size="24" data-name="star" bind:click="onIconTap" />
+                                <view>
+                                    2022-12-12一12:00
+                                </view>
+                            </view>
+                            <view class="item_content_left_1">
+                                <t-icon name="star" size="24" data-name="star" bind:click="onIconTap" />
+                                <view>
+                                    广州
+                                </view>
+                            </view>
+
+                        </view>
+                        <view class="item_content_right">
+                            <view class="orderAgain" bindtap="toProgress">
+                                售后中
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view></t-tab-panel>
+        <t-tab-panel label="全部" value="3" style="{{tabPanelstyle}}">全部</t-tab-panel>
+    </t-tabs>
+
+</view>

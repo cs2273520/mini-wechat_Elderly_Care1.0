@@ -1,0 +1,27 @@
+<view class="main">
+    <view class="chat">
+    <view class="chat_item">
+    <view class="time">
+        20:00
+    </view>
+        <image src="/image/afterSale/customservice.svg" mode=""/> 
+        <view class="msg">
+            您好，请问有什么可以帮到您?
+        </view>
+    </view>
+    <view class="chat_item me">
+        <view class="time">
+        20:00
+    </view>
+        <image src="/image/afterSale/customservice.svg" mode=""/> 
+        <view class="msg">
+            您好，请问有什么可以帮到您?
+        </view>
+    </view>
+       
+    </view>
+    <view class="input">
+        <input type="text" placeholder="请输入您的问题"/>
+        <image src="/image/afterSale/smile.svg" mode=""/>
+    </view>
+</view>

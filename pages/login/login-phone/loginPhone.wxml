@@ -1,0 +1,55 @@
+<view class="loginPhone">
+    <view class="dialog"  wx:if="{{dialogshow}}">
+        短信已发送!
+    </view>
+    <view class="title">
+        <view class="title-left"  wx:if="{{toLogin}}">
+            <text class="t1">登录</text>
+            <view class="t2"><text>或</text> <text
+            bindtap="toRegister"
+            >注册</text> </view>
+        </view>
+        <view class="title-left" wx:if="{{!toLogin}}">
+            <text class="t1">注册</text>
+            <view class="t2"><text>或</text> <text bindtap="toLogin">登录</text> </view>
+        </view>
+        <view class="logo">
+            Logo
+        </view>
+    </view>
+    <view class="form">
+        <t-message id="t-message" />
+        <form bindsubmit='toLoginSubmit'>
+            <view class="code" wx:if="{{!toLogin}}">
+            <input type="text" name="name" class="phone" placeholder="用户名" bindinput='checkName' value="{{name}}" />
+            <view class="msg" >
+                {{checkname?checkname==true?'':checkname:''}}
+            </view>
+        </view>
+
+        <view class="code">
+            <input type="text" name="phone" class="phone" placeholder="电话" bindinput='checkPhone' value="{{phone}}" />
+            <view class="msg">
+               {{checkphone?checkphone==true?'':checkphone:''}}
+            </view>
+        </view>
+           
+            <view class="code">
+                <input type="text" name="code" placeholder="验证码" model:value="{{code}}" bindinput='checkCode'/>
+                <button plain="true" class="getCode" bindtap="checkAndSend" disabled="{{disabled}}">{{getCode}}</button>
+                <view class="msg">
+                    {{checkcode?checkcode==true?'':checkcode:''}}
+            </view>
+            </view>
+        
+            <button class="submit" formType="submit"  data-test="login" wx:if="{{toLogin}}">登录</button>
+            <button class="submit" formType="submit" wx:if="{{!toLogin}}"  data-test="register">注册</button>
+        </form>
+    </view>
+    <view class="prompt" wx:if="{{toLogin}}">
+        点击"登录"，即表示您同意我们的使用条款和隐私。
+    </view>
+    <view class="prompt" wx:if="{{!toLogin}}">
+        点击"注册"，即表示您同意我们的使用条款和隐私。
+    </view>
+</view>

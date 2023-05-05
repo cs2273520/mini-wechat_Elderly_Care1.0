@@ -1,0 +1,132 @@
+<view class="main">
+    <view class="dialog"  wx:if="{{dialogshow}}">
+        {{dialogContent}}
+    </view>
+    <form bindsubmit="personInfo" class="form" wx:if="{{pageIndex==0}}">
+        <view class="input_item">
+            <view >
+                姓名
+            </view>
+            <input type="text" placeholder="请输入姓名" placeholder-class="placeholderStyle" model:value="{{userName}}" bindinput="checkUserName"/>
+            <view class="err">
+                {{checkuserName==true?'':checkuserName}}
+            </view>
+        </view>
+        <view class="input_item">
+            <view>
+                手机号
+            </view>
+            <input type="text" placeholder="请输入手机号" placeholder-class="placeholderStyle" model:value="{{userPhone}}" bindinput="checkUserPhone"/>
+            <view class="err">
+                {{checkuserPhone==true?'':checkuserPhone}}
+            </view>
+        </view>
+        <view class="input_item">
+            <view>
+                身份证号码
+            </view>
+            <input type="text" placeholder="请输入身份证号" placeholder-class="placeholderStyle" model:value="{{userIdCard}}" bindinput="checkUserIdCard"/>
+            <view class="err">
+                {{checkuserIdCard==true?'':checkuserIdCard}}
+            </view>
+        </view>
+        <view class="input_item">
+            <view>
+                目前所在地
+            </view>
+            <input type="text" placeholder="请输入目前所在地" model:value="{{loaction}}" placeholder-class="placeholderStyle" model:value="{{userLoaction}}" bindinput="checkUserLocation"/>
+
+            <image src="../../image/center/location.png" mode="" bindtap="getLocation" />
+            <view class="err">
+                {{checkuserLoaction==true?'':checkuserLoaction}}
+            </view>
+
+        </view>
+
+        <view class="relation">
+            <view>
+                与绑定老人关系
+            </view>
+
+            <view class="section">
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{relation}}">
+                    <view class="picker">
+                        <view>
+                            {{relation[index]}}
+                        </view>
+
+                        <image src="../../image/center/down.png" mode="" />
+                    </view>
+                </picker>
+            </view>
+        </view>
+    </form>
+
+    <form bindsubmit="personInfo" class="form" wx:if="{{pageIndex==1}}">
+        <view class="input_item">
+            <view >
+                姓名
+            </view>
+            <input type="text" placeholder="请输入老人的姓名" placeholder-class="placeholderStyle" model:value="{{oldName}}" bindinput="checkUserName" />
+            <view class="err">
+                {{checkoldName==true?'':checkoldName}}
+            </view>
+        </view>
+        <view class="input_item">
+            <view>
+                手机号
+            </view>
+            <input type="text" placeholder="请输入老人的手机号,没有可以不填写" placeholder-class="placeholderStyle" model:value="{{oldPhone}}" bindinput="checkUserPhone"/>
+            <view class="err">
+                {{checkoldPhone==true?'':checkoldPhone}}
+            </view>
+        </view>
+        <view class="input_item">
+            <view>
+                身份证号码
+            </view>
+            <input type="text" placeholder="请输入老人的身份证号" placeholder-class="placeholderStyle" model:value="{{oldIdCard}}" bindinput="checkUserIdCard"/>
+            <view class="err">
+                {{checkoldIdCard==true?'':checkoldIdCard}}
+            </view>
+        </view>
+        <view class="input_item">
+            <view>
+                目前所在地
+            </view>
+            <input type="text" placeholder="请输入老人的目前所在地" model:value="{{loaction}}" placeholder-class="placeholderStyle" model:value="{{oldLoaction}}" bindinput="checkUserLocation"/>
+
+            <image src="../../image/center/location.png" mode="" bindtap="getLocation" />
+            <view class="err">
+                {{checkoldLoaction==true?'':checkoldLoaction}}
+            </view>
+        </view>
+
+        <view class="relation oldman">
+            <view>
+                身体状况
+            </view>
+
+            <view class="section">
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{relation}}">
+                    <view class="picker">
+                        <view>
+                            {{relation[index]}}
+                        </view>
+
+                        <image src="../../image/center/down.png" mode="" />
+                    </view>
+                </picker>
+            </view>
+        </view>
+    </form>
+
+    <view class="bottom">
+        <button wx:if="{{pageIndex==1}}" type="primary" plain="true" class="next" bindtap="next">上一步</button>
+        <button wx:if="{{pageIndex==1}}" type="primary" plain="true" class="next" bindtap="nextDone">完成</button>
+        <button type="primary" plain="true" class="next" bindtap="next" wx:if="{{pageIndex==0}}">下一步</button>
+
+    </view>
+
+
+</view>

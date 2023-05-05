@@ -1,0 +1,63 @@
+<view class="main">
+    <view class="order_detail">
+        <view>
+            订单id:11111111111111111111
+        </view>
+        <view>
+            订单创建时间:2022-12-12一12：00
+        </view>
+        <view>
+            服务下单时间:2022-12-12一12：00
+        </view>
+        <view>
+            服务完成时间:2022-12-12一12：00
+        </view>
+        <view>
+            服务模式:极速模式
+        </view>
+        <view>
+            服务人员:杨阿姨
+        </view>
+        <view>
+            服务内容:服务1 | 服务2 | 服务3 |
+        </view>
+        <view>
+            服务地点:广州
+        </view>
+        <view>
+            服务时间:2小时
+        </view>
+        <view>
+            金额:288元
+        </view>
+    </view>
+    <view class="afterSaleType">
+        <view class="afterSaleType_title">
+            选择售后类型
+        </view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker">
+                {{array[index]}} <text>></text>
+            </view>
+        </picker>
+    </view>
+
+    <view class="reason">
+        <view class="reason_title">
+            填写原因
+        </view>
+        <textarea class="textarea"></textarea>
+    </view>
+    <view class="uploadImage">
+        <view class="uploadImage_title">
+            上传图片
+        </view>
+        <view class="wrapper">
+            <t-upload media-type="{{['video','image']}}" files="{{originFiles}}" gridConfig="{{gridConfig}}" bind:success="handleSuccess" bind:remove="handleRemove" bind:click="handleClick" />
+        </view>
+    </view>
+    <view class="submit">
+    <view class="button">提交</view>
+   
+    </view>
+</view>

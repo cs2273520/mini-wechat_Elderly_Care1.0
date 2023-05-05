@@ -1,0 +1,23 @@
+<view class="main">
+  <view class="image">
+    <image src="/image/PlaceAnOrder/success.png" mode=""/>
+  </view>  
+    <view class="t1" wx:if="{{!paySuccess}}">
+      下单成功
+    </view>
+    <view class="t1" wx:else>
+      支付成功
+    </view>
+    <view class="t2" wx:if="{{!paySuccess}}">
+      您已成功下单，请在10分钟内支付服务金额，否则订单将自动取消。
+    </view>
+    <view class="t2" wx:if="{{paySuccess}}">
+      您已成功下单，您可前往订单管理查看订单详情。
+    </view>
+    <view class="b1" bindtap="toPay" wx:if="{{!paySuccess}}">
+      去支付
+    </view>
+    <view class="b1 b2" bindtap="toIndex">
+      返回首页
+    </view>
+</view>

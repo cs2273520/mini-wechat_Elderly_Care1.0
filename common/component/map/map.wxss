@@ -1,0 +1,25 @@
+.map_content {
+  position: relative;
+}
+
+.map_content .location {
+  position: absolute;
+  bottom: 30rpx;
+  left: 30rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.map_content .customCallout {
+  height: 60rpx;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  background-color: #005826;
+  color: white;
+  border: 1rpx solid #ccc;
+  border-radius: 60rpx;
+}

@@ -1,0 +1,29 @@
+<view class="map_content">
+    <map id="mapId" class="map" longitude="{{longitude}}" latitude="{{latitude}}" show-location="true"  markers="{{markers}}" customCallout="callout" scale="{{scale}}" bindregionchange="bindregionchange">
+        <cover-view slot="callout" wx:if="{{isExceed}}">
+            <cover-view marker-id="0" class="customCallout">
+                <cover-view wx:if="{{isUser}}"> 服务人员距离{{distance}}km</cover-view>
+                <cover-view wx:else>距离目的地{{distance}}km</cover-view>
+            </cover-view>
+        </cover-view>
+        <cover-view slot="callout" wx:else>
+            <cover-view marker-id="0" >
+            </cover-view>
+        </cover-view>
+        <cover-view slot="callout" wx:if="{{isExceed}}">
+            <cover-view marker-id="1" class="customCallout">
+                <cover-view>
+                    {{isUser?"服务人员":"目的地"}}
+                </cover-view>
+            </cover-view>
+        </cover-view>
+        <cover-view slot="callout" wx:else>
+            <cover-view marker-id="1" >
+            </cover-view>
+        </cover-view>
+    </map>
+
+    <view bindtap="moveTolocation" wx:if="{{hasAuthorization}}">
+        <image class="location" src="/image/common/map/location.png"></image>
+    </view>
+</view>

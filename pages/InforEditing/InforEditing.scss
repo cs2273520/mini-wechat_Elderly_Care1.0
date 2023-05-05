@@ -1,0 +1,132 @@
+.main{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 36.232rpx 105.072rpx;
+
+    .dialog {
+        width: 60%;
+        height: 72.464rpx;
+        position: absolute;
+        top: 36.232rpx;
+        left: 50%;
+        transform: translate(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1.812rpx solid #005826;
+        border-radius: 9.058rpx;
+        z-index: 2;
+        background-color: white;
+        animation: slidein 2s;
+    }
+
+    @keyframes slidein {
+        0%{
+            margin-top: -20%; 
+            opacity: 0; 
+        }
+        50%{
+            margin-top: 0%; 
+            opacity: 1; 
+        }
+        75%{
+            opacity: 0.5; 
+        }
+        100%{
+            opacity: 0; 
+        }
+    }
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        
+        padding-top: 108.696rpx;
+        
+        .input_item{
+            display: flex;
+            flex-direction: column;
+            height: 103.261rpx;
+            margin-top: 36.232rpx;
+            position: relative;
+            .err{
+                color: red;
+                font-size: 12px;
+            }
+            view{
+                font-size: 32.609rpx;
+                height: 43.478rpx;
+            }
+            input{
+                font-size: 28.986rpx;
+                color: black;
+                border-bottom: 1.812rpx solid #D7DBDE;
+                overflow: hidden;
+                padding: 5px 0;
+                padding-right: 45.29rpx;
+            }
+            .placeholderStyle{
+                color: #C3CBCF;
+              }
+            image{
+                width: 43.478rpx;
+                height: 43.478rpx;
+                position: absolute;
+                right: 0;
+                bottom: 9.058rpx;
+                z-index: 2;
+            }
+        }
+        .relation{
+            display: flex;
+            flex-wrap: nowrap;
+            position: relative;
+            margin-top: 45.29rpx;
+            width: 100%;
+            font-size: 32.609rpx;
+            justify-content: space-between;
+            .section{
+                .picker{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    font-size: 25.362rpx;
+                    color: #656C74;
+                    image{
+                        width: 27.174rpx;
+                        height: 27.174rpx;
+                        margin-left: 36.232rpx;
+                    }
+                }
+            }
+           
+        }
+        .oldman{
+            flex-direction: column;
+            font-size: 32.609rpx;
+            .picker{
+                margin-top: 18.116rpx;
+                font-size: 25.362rpx;
+            }
+        }
+     
+    }
+    .bottom{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .next{
+        flex: 1;
+        margin-top: 72.464rpx;
+        height: 86.957rpx;
+        background-color: #005826 !important;
+        color: white !important;
+        font-size: 43.478rpx !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:  72.464rpx 18.116rpx 0 18.116rpx;
+    }
+}

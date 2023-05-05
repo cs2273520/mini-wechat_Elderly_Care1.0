@@ -1,0 +1,18 @@
+<view class="main">
+    <wxs module="_">
+        module.exports.getText = function (value, curr) {
+            if (value > curr) return '已完成'; if (value == curr)
+                return '当前步骤'; return '未完成';
+        }
+    </wxs>
+    <view class="block">
+        <t-steps current="{{first}}" bind:change="onFirstChange">
+            <t-step-item wx:for="{{4}}" wx:key="index" title="{{_.getText(first, index)}}" content="{{progress[index]}}" />
+        </t-steps>
+    </view>
+    <view class="block1">
+  <t-steps layout="vertical" current="{{first}}" bind:change="onFirstChange">
+    <t-step-item wx:for="{{4}}" wx:key="index" title="{{_.getText(first, index)}}" content="{{progress[index] }} {{progresstime[index]}}" />
+  </t-steps>
+</view>
+</view>

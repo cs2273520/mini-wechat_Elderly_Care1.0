@@ -1,0 +1,603 @@
+.main {
+    background-color: #F8F8F8;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .top {
+        padding: 48.913rpx 41.667rpx;
+        background-color: #067335;
+        position: relative;
+        z-index: 10;
+
+        .title {
+            font-size: 32.609rpx;
+            color: white;
+        }
+
+        .line {
+            width: 90%;
+            background-color: white;
+            position: absolute;
+        }
+
+        .step {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            margin-top: 27.174rpx;
+
+            .step_center {
+                width: 679.348rpx;
+                height: 126.812rpx;
+                display: flex;
+                justify-content: space-evenly;
+                color: white;
+                position: relative;
+
+                .line {
+                    width: 56%;
+                    height: 1.812rpx;
+                    background-color: #0256FF;
+                    position: absolute;
+                    left: 50%;
+                    top: 35%;
+                    z-index: 1;
+                    transform: translate(-50%, -10%);
+                }
+
+                .step_1 {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 25.362rpx;
+                    position: relative;
+                    z-index: 2;
+
+                    .image {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 79.71rpx;
+                        height: 79.71rpx;
+                        background-color: white;
+                        border-radius: 50%;
+                        margin-bottom: 9.058rpx;
+                        box-sizing: border-box;
+                        padding: 3.623rpx;
+                        image {
+                            width: 90%;
+                            height: 90%;
+                            box-sizing: border-box;
+                        }
+
+                    }
+
+                    .image_active {
+                        background-color: #0256FF;
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        width: 100%;
+        flex: 1;
+        swiper {
+            width: 100%;
+            background-color: #F8F8F8;
+            min-height: 75vh;
+            .form {
+                .page_1 {
+                    padding: 0 27.174rpx;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    .page_1_top {
+                        width: 693.841rpx;
+                        padding: 18.116rpx;
+                        background-color: white;
+                        border-radius: 27.174rpx;
+                        margin-top: 18.116rpx;
+                        box-sizing: border-box;
+
+                        .title {
+                            font-size: 30.797rpx;
+                            margin: 0 0 18.116rpx 18.116rpx;
+                        }
+
+                        .service {
+                            display: flex;
+                            flex-wrap: wrap;
+                            width: 100%;
+                            box-sizing: border-box;
+
+                            .service_item {
+                                font-size: 28.986rpx;
+                                width: 181.159rpx;
+                                height: 72.464rpx;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin: 0 18.116rpx 18.116rpx 18.116rpx;
+                                border-radius: 9.058rpx;
+                                background-color: #D8D8D8;
+                                box-sizing: border-box;
+                            }
+                            .service_item_active{
+                                border: 1px solid #067335;
+                            }
+                        }
+
+                        .mode {
+                            display: flex;
+                            width: 100%;
+                            justify-content: space-evenly;
+
+                            .fast {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+                                width: 298.913rpx;
+                                height: 217.391rpx;
+                                background-color: #D8D8D8;
+                                border-radius: 9.058rpx;
+                                box-sizing: border-box;
+
+                                .intro {
+                                    margin-top: 10.87rpx;
+                                    font-size: 21.739rpx;
+                                    color: #3D3D3D;
+                                }
+
+                                image {
+                                    width: 67.029rpx;
+                                    height: 67.029rpx;
+                                    margin-bottom: 18.116rpx;
+                                }
+
+                                view {
+                                    font-size: 32.609rpx;
+                                    color: white;
+                                }
+                            }
+
+                            .isActive {
+                                border: 1.812rpx solid #067335;
+                            }
+                        }
+
+                    }
+
+                    .page_1_content {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+
+                        .time {
+                            display: flex;
+                            margin: 27.174rpx 0;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            .chooseHour{
+                                display: flex;
+                                flex: 1;
+                                padding:18.116rpx;
+                                box-sizing: border-box;
+                                border-radius: 18.116rpx;
+                                background-color: white;
+                                font-size: 25.362rpx;
+                                max-width: 342.391rpx;
+                                min-height: 79.71rpx;
+                                align-items: center;
+                                justify-content: center;
+                                .picker{
+                                    min-width: 317.029rpx;
+                                    // background-color: red;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    image{
+                                        width: 43.478rpx;
+                                        height: 43.478rpx;
+                                        margin-left: 50px;
+                                    }
+                                }
+                                .pickers{
+                                    display: flex;
+                                    justify-content: center;
+                                }
+                            }
+                        }
+                    }
+                }
+                .page_3{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .page-section-spacing{
+                        width: 100%;
+                        height: 70vh;
+                        background-color: gainsboro;
+                        display: flex;
+                        .scroll-view{
+                          flex: 1;
+                        }
+                        .scroll-view-item{
+                          
+                          .detail_main{
+                            width: 100%;
+                            padding-bottom: 86.957rpx;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            background-color: #F8F8F8;
+                            .person_photo{
+                              width: 728.261rpx;
+                              height: 376.812rpx;
+                              background-color: white;
+                              border-radius: 18.116rpx;
+                              margin-top: 27.174rpx;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                            }
+                            .detail_intro{
+                              display: flex;
+                              flex-direction: column;
+                              width: 100%;
+                              font-size: 30.797rpx;
+                              .detail_intro_t1{
+                                display: flex;
+                                width: 100%;
+                                padding: 27.174rpx;
+                                image{
+                                  width: 115.942rpx;
+                                  height: 115.942rpx;
+                                  margin-right: 54.348rpx;
+                                }
+                                .detail_intro_t1_right{
+                                  height: 115.942rpx;
+                                  display: flex;
+                                  flex-direction: column;
+                                  justify-content: space-between;
+                                  box-sizing: border-box;
+                                  text{
+                                    margin-right: 18.116rpx;
+                                  }
+                                }
+                              }
+                              .detail_intro_t2{
+                                display: flex;
+                                justify-content: space-evenly;
+                                width: 100%;
+                                align-items: center;
+                                padding: 0 27.174rpx;
+                                box-sizing: border-box;
+                                margin-top: 18.116rpx;
+                                image{
+                                  display: block;
+                                  box-sizing: border-box;
+                                  width: 36.232rpx;
+                                  height: 36.232rpx;
+                                }
+                                .detail_intro_t2_item{
+                                  display: flex;
+                                  align-items: center;
+                                }
+                               
+                              }
+                            }
+                            .work_experience{
+                              display: flex;
+                              flex-direction: column;
+                              background-color: white;
+                              width: 728.261rpx;
+                              border-radius: 18.116rpx;
+                              margin-top: 36.232rpx;
+                              view{
+                                margin-bottom: 9.058rpx;
+                              }
+                              .work_experience_t1{
+                                display: flex;
+                                width: 100%;
+                                justify-content: flex-start;
+                                .work_experience_title_title{
+                                  width: 139.493rpx;
+                                  height: 45.29rpx;
+                                  border: 1.812rpx solid #CCCCCC;
+                                  border-radius: 18.116rpx;
+                                  font-size: 25.362rpx;
+                                  display: flex;
+                                  align-items: center;
+                                  justify-content: center;
+                                }
+                              }
+                              .work_experience_item{
+                                display: flex;
+                                flex-direction: column;
+                                .work_experience_t2{
+                                  font-size: 25.362rpx;
+                                  padding-left: 18.116rpx;
+                                  margin-bottom: 18.116rpx;
+                                }
+                                .work_experience_t3{
+                                  display: flex;
+                                  flex-direction: column;
+                                  padding-left: 36.232rpx;
+                                  .work_experience_t3_1{
+                                    display: flex;
+                                    align-items: center;
+                                    view{
+                                      margin-right: 9.058rpx;
+                                    }
+                                    .round{
+                                      width: 18.116rpx;
+                                      height: 18.116rpx;
+                                      background-color: #CCCCCC;
+                                      border-radius: 50%;
+                                    }
+                                    .work_experience_t3_1_time{
+                                      font-size: 21.739rpx;
+                                      margin-left: 9.058rpx;
+                                    }
+                                    .work_experience_t3_1_price{
+                                      color: #FDA31B;
+                                    }
+                                    
+                                  }
+                                  .work_experience_t3_2{
+                                    font-size: 21.739rpx;
+                                    padding-left: 27.174rpx;  
+                                  }
+                                }
+                              }
+                              
+                             
+                            }
+                          }
+                          
+                            .scroll-view-item_top{
+                                padding: 27.174rpx;
+                                background-color: white;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                border-bottom: 3.623rpx solid #D8D8D8;
+                                .choose{
+                                   display: flex;
+                                   color: white;
+                                   font-size: 21.739rpx;
+                                   .choose_item{
+                                      display: flex;
+                                      height: 40.478rpx;
+                                      align-items: center;
+                                      justify-content: center;
+                                      margin-right: 27.174rpx;
+                                      padding: 9.058rpx 27.174rpx;
+                                      background-color: #067335;
+                                      
+                                      text{
+                                          margin-left: 9.058rpx;
+                                      }
+                                   }
+                                }
+                                .sort{
+                                    font-size: 21.739rpx;
+                                }
+                            }
+                            .scroll-view-item_tab{
+                                display: flex;
+                                justify-content: space-between;
+                                padding:0 27.174rpx;
+                                height: 83.333rpx;
+                                align-items: center;
+                                font-size: 25.362rpx;
+                                color: rgba($color: #000000, $alpha: 0.6);
+                                background-color: white;
+                                .tab_item{
+                                    height: 100%;
+                                    width: 110.507rpx;
+                                    box-sizing: border-box;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-weight:bolder;
+                                }
+                                .tab_item_Active{
+                                    color: #067335;
+                                    border-bottom: 1.812rpx solid #067335;
+                                }
+                            }
+                            .isFixed{
+                              position: fixed;
+                              top: 0;
+                              left: 0;
+                              width: 100%;
+                              box-sizing: border-box;
+                          }
+                            .scroll-view-item_list_item{
+                                padding:18.116rpx 27.174rpx;
+                                display: flex;
+                                justify-content: space-between;
+                                
+                                background-color: #F8F8F8;
+                                .head{
+                                    width: 195.594rpx;
+                                    height: 244.565rpx;
+                                    background-color: #ccc;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    image{
+                                        width: 126.812rpx;
+                                        height: 126.812rpx;
+                                    }
+                                }
+                                .person_intor{
+                                    display: flex;
+                                    flex-direction: column;
+                                    font-weight: bold;
+                                    padding-bottom: 9.058rpx;
+                                    margin-left: 36.232rpx;
+                                    border-bottom: 1.812rpx solid #ccc;
+                                    .intro_1{
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                          align-items: center;
+                                          margin-bottom: 9.058rpx;
+                                      text:nth-child(1){
+                                          font-size: 32.609rpx;
+                                          font-weight: bolder;
+                                          margin-right: 18.116rpx;
+                                      }
+                                      text:nth-child(2){
+                                          font-size: 25.362rpx;
+                                          height: 100%;
+                                          display: flex;
+                                          align-items: flex-end;
+                                      }
+                                  }
+                                  .intro_2{
+                                      margin-bottom: 18.116rpx;
+                                      font-size: 21.739rpx;
+                                      color: #3D3D3D;
+                                      text{
+                                          display: inline-block;
+                                          margin-right: 27.174rpx;
+                                      }
+                                  }
+                                  .intro_3{
+                                      display: flex;
+                                      flex-wrap: wrap;
+                                      font-size: 21.739rpx;
+                                      view{
+                                          display:inline-block;
+                                          background-color: #D8D8D8;
+                                          padding: 5.435rpx 9.058rpx;
+                                          border-radius: 9.058rpx;
+                                          margin-right: 9.058rpx;
+                                          margin-bottom: 9.058rpx;
+                                      }
+                                  }
+                                  .intro_4{
+                                      width: 100%;
+                                      display: flex;
+                                      justify-content: flex-end;
+                                      font-size: 28.986rpx;
+                                      color: #FDA31B;
+                                      font-weight: normal;
+                                  }
+                                  }
+                              
+                            }
+                            .paging{
+                                padding: 27.174rpx;
+                                display: flex;
+                                justify-content: space-between;
+                                font-size: 25.362rpx;
+                                font-weight: bold;
+                                .pages{
+                                    display: flex;
+                                    text{
+                                        margin-right: 18.116rpx;
+                                    }
+                                }
+                                .no_page{
+                                    text{
+                                        margin:0 9.058rpx;
+                                        width: 36.232rpx;
+                                        height: 36.232rpx;
+                                        background-color: #D8D8D8;
+                                        display: inline-flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                    }
+                                }
+                            }
+                        }
+                      }
+                      .scroll-view_H{
+                        white-space: nowrap;
+                      }
+                      .scroll-view-item_H{
+                        display: inline-block;
+                        width: 100%;
+                      }
+                     
+                }
+            }
+
+        }
+    }
+
+    .bottom {
+        width: 100%;
+        height: 135.87rpx;
+        position: fixed;
+        border-top: 1px solid #ccc;
+        left: 0;
+        bottom: 0;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .pre {
+            height: 90.58rpx;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28.986rpx;
+            margin-right: 18.116rpx;
+        }
+
+        .next {
+            width: 565.217rpx;
+            height: 90.58rpx;
+            background-color: #067335;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 43.478rpx;
+            color: white;
+            border-radius: 18.116rpx;
+        }
+        .toDetail{
+            width: 264.493rpx;
+            font-size: 28.986rpx;
+        }
+        .bt_right{
+            display: flex;
+            view:nth-child(1){
+                margin-right: 36.232rpx;
+            }
+        }
+        .collect{
+            display: flex;
+            flex-direction: column;
+            color: #3D3D3D;
+            font-size: 32.609rpx;
+            align-items: center;
+            justify-content: center;
+            image{
+                width: 36.232rpx;
+                height: 36.232rpx;
+            }
+        }
+    }
+    .bottom_Active{
+        box-sizing: border-box;
+        padding: 0 27.174rpx;
+        justify-content: space-between;
+    }
+
+}

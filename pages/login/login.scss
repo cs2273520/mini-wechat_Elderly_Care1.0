@@ -1,0 +1,61 @@
+.content {
+    width: 100%;
+    height: 100rem;
+    background-color: #F8F8F8;
+    display: flex;
+    justify-content: center;
+   
+    
+      
+    .dialog {
+        position: fixed;
+        bottom: 40rpx;
+        width: 688rpx;
+        height: 350rpx;
+        display: flex;
+        flex-direction: column;
+        background-color: #FDFDFD;
+        align-items: center;
+        border-radius: 10px;
+        justify-content: center;
+        .agree {
+            font-size: 12px;
+        }
+        .wechatLogin{
+            margin-top: 20rpx;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #07C160;
+            width: 440rpx;
+            height: 90rpx;
+            border-radius: 40rpx;
+            font-size: 24rpx;
+            color: white;
+            button{
+                font-size: 24rpx;
+                margin: 0;
+                padding: 0;
+                border:0;
+                color: white;
+                margin-left: 10rpx;
+            }
+            image{
+                width: 20px;
+                height: 20px;
+            }
+        }
+        .phoneLogin{
+            margin-top: 20rpx;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FFFFFF;
+            width: 440rpx;
+            height: 90rpx;
+            border-radius: 40rpx;
+            font-size: 24rpx;
+            border: 1px solid #D8D8D8;
+        }
+    }
+}

@@ -1,0 +1,525 @@
+<view class="main">
+
+    <view class="top " >
+        <view class="title">
+            选择您的需求，马上找到您所满意
+        </view>
+        <view class="step">
+            <view class="step_center">
+                <view class="line"></view>
+                <view class="step_1">
+                    <view class="image {{step==0?'image_active':''}}">
+                        <image src="/image/PlaceAnOrder/choose.svg" mode="" wx:if="{{step!=0}}"/>
+                        <image src="/image/PlaceAnOrder/choose_s.svg" mode="" wx:if="{{step==0}}"/>
+                    </view>
+                    <view>
+                        选择需求
+                    </view>
+                </view>
+                <view class="step_1">
+                    <view class="image {{step==1?'image_active':''}}">
+                        <image src="/image/PlaceAnOrder/match.svg" mode="" wx:if="{{step!=1}}"/>
+                        <image src="/image/PlaceAnOrder/match_s.svg" mode="" wx:if="{{step==1}}"/>
+                    </view>
+                    <view>
+                        匹配
+                    </view>
+                </view>
+                <view class="step_1">
+                    <view class="image {{step==2?'image_active':''}}">
+                        <image src="/image/PlaceAnOrder/order.svg" mode="" wx:if="{{step!=2}}"/>
+                        <image src="/image/PlaceAnOrder/order_s.svg" mode="" wx:if="{{step==2}}"/>
+                    </view>
+                    <view>
+                        下单
+                    </view>
+                </view>
+            </view>
+
+
+
+        </view>
+
+    </view>
+    <view class="content">
+        <swiper previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px" current="{{step}}">
+            <block wx:for="{{page}}" wx:key="*this">
+                <swiper-item catchtouchmove="catchTouchMove">
+                    <form bindsubmit="">
+                        <view class="form">
+                            <view class="page_1" wx:if="{{step==0}}">
+                                <view class="page_1_top">
+                                    <view class="title">
+                                        选择服务模式
+                                    </view>
+                                    <view class="mode">
+                                        <view class="fast {{serviceMode=='quick'?'isActive':''}}" bindtap="choooseService" data-word="quick">
+                                            <image src="/image/PlaceAnOrder/quick.png" mode="" />
+                                            <view>
+                                                极速模式(小时)
+                                            </view>
+                                        </view>
+                                        <view class="fast {{serviceMode=='month'?'isActive':''}}" bindtap="choooseService" data-word="month">
+                                            <image src="/image/PlaceAnOrder/month.png" mode="" />
+                                            <view>
+                                                包月模式
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="page_1_content">
+                                    <view class="time">
+                                    <view class="chooseHour">
+                                        <picker mode="multiSelector" start='{{today}}' bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+                                            <view class="picker">
+                                                {{askDate==""?"选择上门时间":"预约时间 : "+askDate}}
+                                                <image src="/image/PlaceAnOrder/right.png" mode="" wx:if="{{isChooseDate}}"/>
+                                            </view>
+                                        </picker>
+                                    </view>
+                                    <view class="chooseHour">
+                                            <picker bindchange="bindPickerChange" value="{{chooseHourIndex}}" range="{{chooseHour}}">
+                                                <view class="picker pickers" wx:if="{{isChooseHour}}">
+                                                    服务时长：{{chooseHour[chooseHourIndex]}}
+                                                </view>
+                                                <view class="picker" wx:else>
+                                                    <text>请选择服务时长</text>
+                                                    <image src="/image/PlaceAnOrder/right.png" mode="" />
+                                                </view>
+                                            </picker>
+                                    </view>
+                                    </view>
+                                </view>
+                                <view class="page_1_top">
+                                    <view class="title">
+                                        选择您需要的服务
+                                    </view>
+                                    <view class="service">
+                                    <block wx:for="{{needservice}}" wx:key="index">
+                                    <view class="service_item {{item.isSelect?'service_item_active':''}}" bindtap="chooseNeedService" data-service="{{item}}" data-index='{{index}}' >
+                                 {{item.service}}
+                                    </view>   
+                                    </block>
+                                   
+                                    </view>
+                                </view>
+
+                            </view>
+                            <view class="page_1" wx:if="{{step==1}}">
+                                <view class="page_1_top">
+                                    <view class="title">
+                                        选择匹配模式
+                                    </view>
+                                    <view class="mode">
+                                        <view class="fast {{matchMode=='customize'?'isActive':''}}" bindtap="chooseMath" data-word="customize">
+                                            <image src="/image/PlaceAnOrder/quick.png" mode="" />
+                                            <view>
+                                                继续自定义
+                                            </view>
+                                            <view class="intro">
+                                                查找符合您需求的服务人员
+                                            </view>
+                                        </view>
+                                        <view class="fast {{matchMode=='match'?'isActive':''}}" bindtap="chooseMath" data-word="match">
+                                            <image src="/image/PlaceAnOrder/month.png" mode="" />
+                                            <view>
+                                                智能匹配
+                                            </view>
+                                            <view class="intro">
+                                                一键匹配下单，不用烦恼选择
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                            <view class="page_3" wx:if="{{step==2}}">
+
+                                <view class="page-section-spacing">
+
+                                    <scroll-view scroll-y="true" bindscroll="scroll">
+                                        <view class="scroll-view-item" wx:if="{{!toDetail}}">
+                                            <view class="scroll-view-item_top">
+                                                <view class="choose">
+                                                    <view class="choose_item">
+                                                        照顾老人 <text bindtap="del">x</text>
+                                                    </view>
+                                                    <view class="choose_item">
+                                                        极速模式 <text bindtap="del">x</text>
+                                                    </view>
+                                                </view>
+                                                <view class="sort">
+                                                    默认排序
+                                                </view>
+                                            </view>
+                                            <view class="scroll-view-item_tab {{isFixed?'isFixed':''}}">
+                                                <view class="tab_item {{grade=='advanced'?'tab_item_Active':''}}" bindtap="grade" data-word="advanced">
+                                                    高级-金牌
+                                                </view>
+                                                <view class="tab_item {{grade=='intermediate'?'tab_item_Active':''}}" bindtap="grade" data-word="intermediate">
+                                                    中级-银牌
+                                                </view>
+                                                <view class="tab_item {{grade=='ordinary'?'tab_item_Active':''}}" bindtap="grade" data-word="ordinary">
+                                                    普通-铜牌
+                                                </view>
+                                            </view>
+                                            <view class="scroll-view-item_list">
+                                                <view class="scroll-view-item_list_item" bindtap="toSevicePerson">
+                                                    <view class="head">
+                                                        <image src="/image/PlaceAnOrder/center_s.png" mode="" />
+                                                    </view>
+                                                    <view class="person_intor">
+                                                        <view class="intro_1">
+                                                            <text>杨阿姨</text>
+                                                            <text>广东人</text>
+                                                        </view>
+                                                        <view class="intro_2">
+                                                            <text>48岁</text>
+                                                            <text>做饭做家务</text>
+                                                            <text>1年经验</text>
+                                                            <text>住家</text>
+                                                            <text>照顾老人</text>
+                                                        </view>
+                                                        <view class="intro_3">
+                                                            <view>
+                                                                大专学历
+                                                            </view>
+                                                            <view>
+                                                                普通话良好
+                                                            </view>
+                                                            <view>
+                                                                老实本分
+                                                            </view>
+                                                            <view>
+                                                                通情达理
+                                                            </view>
+                                                            <view>
+                                                                高级护理
+                                                            </view>
+                                                        </view>
+                                                        <view class="intro_4">
+                                                            <text>价格:</text>
+                                                            <text>188/小时</text>
+                                                        </view>
+                                                    </view>
+                                                </view>
+                                                <view class="scroll-view-item_list_item" bindtap="toSevicePerson">
+                                                    <view class="head">
+                                                        <image src="/image/PlaceAnOrder/center_s.png" mode="" />
+                                                    </view>
+                                                    <view class="person_intor">
+                                                        <view class="intro_1">
+                                                            <text>杨阿姨</text>
+                                                            <text>广东人</text>
+                                                        </view>
+                                                        <view class="intro_2">
+                                                            <text>48岁</text>
+                                                            <text>做饭做家务</text>
+                                                            <text>1年经验</text>
+                                                            <text>住家</text>
+                                                            <text>照顾老人</text>
+                                                        </view>
+                                                        <view class="intro_3">
+                                                            <view>
+                                                                大专学历
+                                                            </view>
+                                                            <view>
+                                                                普通话良好
+                                                            </view>
+                                                            <view>
+                                                                老实本分
+                                                            </view>
+                                                            <view>
+                                                                通情达理
+                                                            </view>
+                                                            <view>
+                                                                高级护理
+                                                            </view>
+                                                        </view>
+                                                        <view class="intro_4">
+                                                            <text>价格:</text>
+                                                            <text>188/小时</text>
+                                                        </view>
+                                                    </view>
+                                                </view>
+                                                <view class="scroll-view-item_list_item">
+                                                    <view class="head">
+                                                        <image src="/image/PlaceAnOrder/center_s.png" mode="" />
+                                                    </view>
+                                                    <view class="person_intor">
+                                                        <view class="intro_1">
+                                                            <text>杨阿姨</text>
+                                                            <text>广东人</text>
+                                                        </view>
+                                                        <view class="intro_2">
+                                                            <text>48岁</text>
+                                                            <text>做饭做家务</text>
+                                                            <text>1年经验</text>
+                                                            <text>住家</text>
+                                                            <text>照顾老人</text>
+                                                        </view>
+                                                        <view class="intro_3">
+                                                            <view>
+                                                                大专学历
+                                                            </view>
+                                                            <view>
+                                                                普通话良好
+                                                            </view>
+                                                            <view>
+                                                                老实本分
+                                                            </view>
+                                                            <view>
+                                                                通情达理
+                                                            </view>
+                                                            <view>
+                                                                高级护理
+                                                            </view>
+                                                        </view>
+                                                        <view class="intro_4">
+                                                            <text>价格:</text>
+                                                            <text>188/小时</text>
+                                                        </view>
+                                                    </view>
+                                                </view>
+
+                                                <view class="paging">
+                                                    <view class="res">
+                                                        共找到20位
+                                                    </view>
+                                                    <view class="separate">
+                                                        <text>3</text>/页
+                                                    </view>
+                                                    <view class="pages">
+                                                        <text>1</text>
+                                                        <text>2</text>
+                                                        <text>3</text>
+                                                        <text>...</text>
+                                                    </view>
+                                                    <view class="no_page">
+                                                        第
+                                                        <text>1</text>
+                                                        页
+                                                    </view>
+                                                </view>
+
+                                            </view>
+                                        </view>
+                                        <view class="scroll-view-item" wx:else>
+                                            <view class="detail_main">
+                                                <view class="person_photo">
+                                                    个人照片
+                                                </view>
+                                                <view class="detail_intro">
+                                                    <view class="detail_intro_t1">
+                                                        <image src="/image/PlaceAnOrder/center_s.png" mode="" />
+                                                        <view class="detail_intro_t1_right">
+                                                            <view>杨阿姨</view>
+                                                            <view>
+                                                                <text>48岁</text>
+                                                                <text>广东阳江</text>
+                                                                <text>一年经验</text>
+                                                            </view>
+                                                        </view>
+                                                    </view>
+                                                    <view class="detail_intro_t2">
+                                                        <view class="detail_intro_t2_item">
+                                                            <image src="/image/PlaceAnOrder/quick.png" mode="" />
+                                                            <text>汉族</text>
+                                                        </view>
+                                                        <view class="detail_intro_t2_item">
+                                                            <image src="/image/PlaceAnOrder/quick.png" mode="" />
+                                                            <text>属虎</text>
+                                                        </view>
+                                                        <view class="detail_intro_t2_item">
+                                                            <image src="/image/PlaceAnOrder/quick.png" mode="" />
+                                                            <text>狮子座</text>
+                                                        </view>
+                                                        <view class="detail_intro_t2_item">
+                                                            <image src="/image/PlaceAnOrder/quick.png" mode="" />
+                                                            <text>大专</text>
+                                                        </view>
+                                                    </view>
+                                                </view>
+                                                <view class="work_experience">
+                                                    <view class="work_experience_t1">
+                                                        <view class="work_experience_title_title">
+                                                            工作经历
+                                                        </view>
+                                                    </view>
+                                                    <view class="work_experience_item">
+                                                        <view class="work_experience_t2">
+                                                            智慧养老到家工作经历
+                                                        </view>
+                                                        <view class="work_experience_t3">
+                                                            <view class="work_experience_t3_1">
+                                                                <view class="round"></view>
+                                                                <view>
+                                                                    极速模式
+                                                                </view>
+                                                                <view class="work_experience_t3_1_time">
+                                                                    2022-12-12
+                                                                </view>
+                                                            </view>
+                                                            <view class="work_experience_t3_2">
+                                                                介绍主要服务了什么，客户满意成都，服务时间等。
+                                                            </view>
+                                                        </view>
+                                                    </view>
+                                                    <view class="work_experience_item">
+                                                        <view class="work_experience_t2">
+                                                            智慧养老到家工作经历
+                                                        </view>
+                                                        <view class="work_experience_t3">
+                                                            <view class="work_experience_t3_1">
+                                                                <view class="round"></view>
+                                                                <view>
+                                                                    极速模式
+                                                                </view>
+                                                                <view class="work_experience_t3_1_time">
+                                                                    2022-12-12
+                                                                </view>
+                                                            </view>
+                                                            <view class="work_experience_t3_2">
+                                                                介绍主要服务了什么，客户满意成都，服务时间等。
+                                                            </view>
+                                                        </view>
+                                                    </view>
+
+                                                </view>
+
+
+                                                <view class="work_experience">
+                                                    <view class="work_experience_t1">
+                                                        <view class="work_experience_title_title">
+                                                            培训经历
+                                                        </view>
+                                                    </view>
+                                                    <view class="work_experience_item">
+                                                        <view class="work_experience_t2">
+
+                                                        </view>
+                                                        <view class="work_experience_t3">
+                                                            <view class="work_experience_t3_1">
+                                                                <view class="round"></view>
+                                                                <view>
+                                                                    初级家教
+                                                                </view>
+                                                                <view class="work_experience_t3_1_time">
+                                                                    2022-12-12
+                                                                </view>
+                                                            </view>
+                                                            <view class="work_experience_t3_2">
+                                                                介绍主要服务了什么，客户满意成都，服务时间等。
+                                                            </view>
+                                                        </view>
+                                                    </view>
+                                                    <view class="work_experience_item">
+                                                        <view class="work_experience_t2">
+
+                                                        </view>
+                                                        <view class="work_experience_t3">
+                                                            <view class="work_experience_t3_1">
+                                                                <view class="round"></view>
+                                                                <view>
+                                                                    中级服务师
+                                                                </view>
+                                                                <view class="work_experience_t3_1_time">
+                                                                    2022-12-12
+                                                                </view>
+                                                            </view>
+                                                            <view class="work_experience_t3_2">
+                                                                介绍主要服务了什么，客户满意成都，服务时间等。
+                                                            </view>
+                                                        </view>
+                                                    </view>
+
+                                                </view>
+
+
+                                                <view class="work_experience">
+                                                    <view class="work_experience_t1">
+                                                        <view class="work_experience_title_title">
+                                                            价格
+                                                        </view>
+                                                    </view>
+                                                    <view class="work_experience_item">
+                                                        <view class="work_experience_t2">
+
+                                                        </view>
+                                                        <view class="work_experience_t3">
+                                                            <view class="work_experience_t3_1">
+                                                                <view class="round"></view>
+                                                                <view>
+                                                                    极速模式:<text class="work_experience_t3_1_price">188.00</text>/小时
+                                                                </view>
+                                                                <view class="work_experience_t3_1_time">
+                                                                </view>
+                                                            </view>
+                                                            <view class="work_experience_t3_2">
+                                                            </view>
+                                                        </view>
+                                                    </view>
+                                                    <view class="work_experience_item">
+                                                        <view class="work_experience_t2">
+
+                                                        </view>
+                                                        <view class="work_experience_t3">
+                                                            <view class="work_experience_t3_1">
+                                                                <view class="round"></view>
+                                                                <view>
+                                                                    包月模式:<text class="work_experience_t3_1_price">3888.00</text>/月
+                                                                </view>
+                                                                <view class="work_experience_t3_1_time">
+                                                                </view>
+                                                            </view>
+                                                            <view class="work_experience_t3_2">
+
+                                                            </view>
+                                                        </view>
+                                                    </view>
+
+                                                </view>
+
+
+                                            </view>
+
+                                        </view>
+
+                                    </scroll-view>
+
+                                </view>
+                            </view>
+                        </view>
+
+                    </form>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="bottom {{toDetail ?'bottom_Active':''}}">
+        <view class="pre" bindtap="pre" wx:if="{{step!=0}}">
+            返回
+        </view>
+        <view class="next" wx:if="{{matchMode!='match'&&step!=2?true:false}}" bindtap="next">
+            下一步
+        </view>
+        <view class="next" wx:if="{{step==2 && !toDetail?true:false}}" bindtap="next">
+            选择服务人员
+        </view>
+        <view class="bt_right">
+            <view class="collect" wx:if="{{toDetail && step==2?true:false}}" bindtap="collect">
+                <image src="/image/PlaceAnOrder/star.png" mode="" />
+                <text>加入收藏</text>
+            </view>
+
+
+            <view class="next {{toDetail?'toDetail':''}}" wx:if="{{matchMode=='match'||toDetail && step==2?true:false}}" bindtap="toOrder">
+                下单
+            </view>
+        </view>
+
+
+    </view>
+
+
+
+</view>
